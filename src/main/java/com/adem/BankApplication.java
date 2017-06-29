@@ -22,8 +22,8 @@ import com.adem.entities.SavingsAccount;
 import com.adem.entities.WithdrawalOperation;
 import com.adem.service.IBankService;
 
-@SpringBootApplication
-public class BankApplication {
+@SpringBootApplication 
+public class BankApplication  { // implements CommandLineRunner
 
 	@Autowired
 	private CustomerRepository customerRepository;
@@ -31,7 +31,7 @@ public class BankApplication {
 	private AccountRepository accountRepository;
 	@Autowired
 	private OperationRepository operationRepository;
-	
+
 	@Autowired
 	private IBankService iBankService;
 
@@ -40,38 +40,29 @@ public class BankApplication {
 
 	}
 
-/*	@Override
+	/*@Override
 	public void run(String... arg0) throws Exception {
-		
-		
-		
-		
-		
-		
-		/*
-		Customer cust1 = customerRepository.save(new Customer("adem",
-				"adem@gmail.com"));
-		Customer cust2 = customerRepository.save(new Customer("asma",
-				"asma@gmail.com"));
 
-		Account acc1 = accountRepository.save(new CurrentAccount("acc1",
-				new Date(), 9000, cust1, 6000));
-		Account acc2 = accountRepository.save(new SavingsAccount("acc2",
-				new Date(), 6000, cust2, 5.5));
-		
-		Operation paymentOpAcc1 = operationRepository.save(new PaymentOperation(new Date(), 2000, acc1));
-		Operation widhdrawelOpAcc1 = operationRepository.save(new WithdrawalOperation(new Date(), 1000, acc1));
-		Operation paymentOp1Acc1 = operationRepository.save(new PaymentOperation(new Date(), 2000, acc1));
-		Operation widhdrawelOp1Acc1 = operationRepository.save(new WithdrawalOperation(new Date(), 1000, acc1));
-		Operation paymentOp2Acc1 = operationRepository.save(new PaymentOperation(new Date(), 5000, acc1));
-		Operation widhdrawelOp2Acc1 = operationRepository.save(new WithdrawalOperation(new Date(), 1000, acc1));
-		Operation paymentOp3Acc1 = operationRepository.save(new PaymentOperation(new Date(), 8741, acc1));
-		Operation widhdrawelOp3Acc1 = operationRepository.save(new WithdrawalOperation(new Date(), 2000, acc1));
-		Operation paymentOp4Acc1 = operationRepository.save(new PaymentOperation(new Date(), 6587, acc1));
-		Operation widhdrawelOp4Acc1 = operationRepository.save(new WithdrawalOperation(new Date(), 2547, acc1));
-		
-		Operation paymentOpAcc2 = operationRepository.save(new PaymentOperation(new Date(), 1000, acc2));
-		Operation widhdrawelOpAcc2 = operationRepository.save(new WithdrawalOperation(new Date(), 2000, acc2));
+		Customer cust1 = customerRepository.save(new Customer("adem", "adem@gmail.com"));
+		Customer cust2 = customerRepository.save(new Customer("asma", "asma@gmail.com"));
 
-		iBankService.payToAccount(acc1.getAccountId(), 99999999); */
+		Account currAcc = accountRepository.save(new CurrentAccount("currAcc", new Date(), 9000, cust1, 6000));
+		Account savAcc = accountRepository.save(new SavingsAccount("savAcc", new Date(), 6000, cust2, 5.5));
+
+		Operation paymentOpcurrAcc = operationRepository.save(new PaymentOperation(new Date(), 2000, currAcc));
+		Operation widhdrawelOpcurrAcc = operationRepository.save(new WithdrawalOperation(new Date(), 1000, currAcc));
+		Operation paymentOp1currAcc = operationRepository.save(new PaymentOperation(new Date(), 2000, currAcc));
+		Operation widhdrawelOp1currAcc = operationRepository.save(new WithdrawalOperation(new Date(), 1000, currAcc));
+		Operation paymentOp2currAcc = operationRepository.save(new PaymentOperation(new Date(), 5000, currAcc));
+		Operation widhdrawelOp2currAcc = operationRepository.save(new WithdrawalOperation(new Date(), 1000, currAcc));
+		Operation paymentOp3currAcc = operationRepository.save(new PaymentOperation(new Date(), 8741, currAcc));
+		Operation widhdrawelOp3currAcc = operationRepository.save(new WithdrawalOperation(new Date(), 2000, currAcc));
+		Operation paymentOp4currAcc= operationRepository.save(new PaymentOperation(new Date(), 6587, currAcc));
+		Operation widhdrawelOp4currAcc = operationRepository.save(new WithdrawalOperation(new Date(), 2547, currAcc));
+
+		Operation paymentOpsavAcc = operationRepository.save(new PaymentOperation(new Date(), 1000, savAcc));
+		Operation widhdrawelOpsavAcc = operationRepository.save(new WithdrawalOperation(new Date(), 2000, savAcc));
+
+		iBankService.payToAccount(currAcc.getAccountId(), 99999999);
+	} */
 }
